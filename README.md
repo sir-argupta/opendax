@@ -1,14 +1,48 @@
-# OpenDAX
+# MobiDAX
 
-OpenDAX is a multi-service container system for building your crypto-currency exchange
-You can access get a free access to frontend UI by signin up on [openware.com](https://www.openware.com/)
+**MobiDAX** - World's First Cross-Platform Software Solution for deploying, customizing and maintaining Cryptocurrency and Fiat Trading Platforms. Developed on **Flutter** (by Google) Framework , MobiDAX is the only Cross-Platform solution that covers Web, iOS, Android Mobile and Desktop Applications from a **single code base**, with trader friendly UI and Native UX.
+
+![Mobidax Architecture](docs/images/mobidax.jpg)
+
+
+
+### Android Application Demo:
+
+![Android Mobidax Usage](docs/images/android.gif)
+
+
+
+### IOS Application Demo:
+
+![Mobidax IOS Usage](docs/images/ios.gif)
+
+
+
+
+
+### Mobidax is easily an highly customisable, so which Mobidax is yours ?
+
+![Mobidax IOS Usage](docs/images/colors.jpg)
+
+
+
+
+
+## Mobidax Roadmap
+
+### ![Mobidax Architecture](docs/images/roadmap.jpeg)
+
+### There are some great releases coming out soon, so stay tuned for those:
+
+**1. Setter (Advanced Admin Panel)**
+
+**2. Mobidax Web UI (Highly Customizable Trading Web UI)**
+
+
+
+
 
 ## Getting started
-
-### Get your License key
-
-Register on [openware.com](https://www.openware.com/) to get your license key for a domain name you control.
-Save the domain and license key string.
 
 ### VM requirements
 
@@ -63,16 +97,6 @@ rake -T # To see if ruby and lib works
 ```
 
 Using `rake -T` you can see all available commands, and can create new ones in `lib/tasks`
-
-### Paste you domain and license key
-
-Edit the file `config/app.yml`
-Replace the license key in this block:
-```yaml
-license:
-  url: "https://www.openware.com/api/v2/tenko"
-  license_key: "PASTE-KEY-HERE"
-```
 
 ### Run everything
 
@@ -136,7 +160,7 @@ The components included in the stack are:
 - `cryptonodes` - cryptocurrency nodes such as [parity](https://github.com/paritytech/parity-ethereum) **[Optional]**
 - `daemons` - Peatio daemons and Ranger **[Optional]**
 - `setup` - setup hooks for Peatio and Barong to run before the application starts(DB migration etc.)
-- `app` - [Peatio](https://github.com/rubykube/peatio), [Barong](https://github.com/rubykube/barong) and the [Ambassador](https://www.getambassador.io) API gateway
+- `app` - [Peatio](https://github.com/rubykube/peatio), [Barong](https://github.com/rubykube/barong) and the [Envoy](https://envoyproxy.io) API gateway
 - `frontend` - the frontend application located at `vendor/frontend`
 - `tower` - the Tower admin panel application located at `vendor/tower`
 
