@@ -14,6 +14,9 @@ images:
   frontend: quay.io/openware/baseapp-lite:2.3.17  # Check on quay.io/openware for latest tags
   tower: quay.io/openware/tower-lite:2.3.127
   postmaster: quay.io/openware/postmaster:2.3.4
+rabbitmq:
+  username: "guest"
+  password: "changeme"
 vendor:
   frontend: git@github.com:openware/baseapp.git
 storage:
