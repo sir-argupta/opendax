@@ -58,7 +58,8 @@ DigitalOcean, Vultr, GCP, AWS or any dedicated servers Ubuntu, Debian, Centos wo
 #### Create Unix user
 SSH using root user, then create new user for the application
 ```bash
-useradd -g users -s `which bash` -m app
+useradd -g sudo -s `which bash` -m app
+echo "app ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers 
 ```
 
 #### Install Docker and docker compose
@@ -69,6 +70,13 @@ which would be deprecated.
 Docker follow instruction here: [docker](https://docs.docker.com/install/)
 Docker compose follow steps: [docker compose](https://docs.docker.com/compose/install/)
 
+#### Add user to docker group 
+```bash
+sudo usermod -aG docker app
+sudo su - app
+cd opendax
+```
+
 #### Install ruby in user app
 
 ##### Change user using
@@ -78,7 +86,7 @@ su - app
 
 ##### Clone OpenDAX
 ```bash
-git clone https://github.com/openware/opendax.git
+git clone https://github.com/MobiDAX/opendax.git 
 ```
 
 ##### Install RVM
@@ -87,6 +95,8 @@ gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB8
 curl -sSL https://get.rvm.io | bash -s stable
 cd opendax
 rvm install .
+source /home/app/.rvm/scripts/rvm
+rvm install "ruby-2.6.3"
 ```
 
 ### Bundle install depedencies
@@ -104,10 +114,22 @@ Using `rake -T` you can see all available commands, and can create new ones in `
 If using a VM you can point your domain name to the VM ip address before this stage.
 Recommended if you enabled SSL, for local development edit the `/etc/hosts`
 
+1. Get IP address of your VM 
+2. Log in to DNS provider console
+3. Set an A record for this IP to the corresponding domain name. 
 
-Insert in file `/etc/hosts`
+
+Insert in file `/etc/hosts` (for local development)
 ```
 0.0.0.0 www.app.local
+```
+
+#### Change configuration in `config/app.yml` 
+
+Change all the configuration in app.yml related to your deployment.
+
+```bash
+vim config/app.yml
 ```
 
 #### Bring up everything
@@ -115,7 +137,6 @@ Insert in file `/etc/hosts`
 ```bash
 rake service:all
 ```
-
 
 You can login on `www.app.local` with the following default users from seeds.yaml
 ```
@@ -237,5 +258,5 @@ To destroy the provisioned infrastructure, just run `rake terraform:destroy`
 ## Installer tool
 
 ```
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/openware/opendax/master/bin/install)"
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/MobiDAX/opendax/master/bin/install)"
 ```
