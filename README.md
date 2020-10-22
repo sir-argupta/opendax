@@ -131,6 +131,12 @@ Change all the configuration in app.yml related to your deployment.
 ```bash
 vim config/app.yml
 ```
+#### Authenticate in Github Container Registry
+
+```bash
+export PAT=*github_token*
+docker login docker.pkg.github.com --username *your_github_username* --password-stdin
+```
 
 #### Bring up everything
 
