@@ -10,7 +10,7 @@ license:
   key: "PASTE-KEY-HERE"
 images:
   peatio: rubykube/peatio:2.3.43
-  barong: rubykube/barong:2.3.40
+  barong: rubykube/barong:2.4.0
   frontend: docker.pkg.github.com/mobidax/opendax/baseapp:2.3.27
   tower: quay.io/openware/tower:2.3.138
   postmaster: quay.io/openware/postmaster:2.3.4
