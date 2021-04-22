@@ -137,6 +137,7 @@ vim config/app.yml
 export PAT=*github_token*
 docker login docker.pkg.github.com --username *your_github_username* --password-stdin
 ```
+My BaseApp Image InCase Github login not working docker.io/sirargupta/mobidax-baseapp  
 
 #### Bring up everything
 
