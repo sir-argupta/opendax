@@ -16,6 +16,21 @@ users:
     role: member
     state: active
     level: 3
+  - email: aashutosh.g27@gmail.com
+    password: Vdz$f$$B2gtz
+    role: admin
+    state: active
+    level: 3
+  - email: obabu213@gmail.com
+    password: Vdz$f$$B2gtz
+    role: member
+    state: active
+    level: 3
+  - email: support@dinrx.com
+    password: Vdz$f$$B2gtz
+    role: admin
+    state: active
+    level: 3
 
 levels:
   - key: email
