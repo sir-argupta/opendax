@@ -1,17 +1,17 @@
 app:
-  name: "OpenDAX-LT"
-  domain: "app.local"
-  subdomain: "www"
+  name: "Dinrx"
+  domain: "dinrx.com"
+  subdomain: "trade"
 ssl:
-  enabled: false    # Make sure to enable during deployment
-  email: "support@example.com"
+  enabled: true    # Make sure to enable during deployment
+  email: "support@dinrx.com"
 license:
   url: "https://www.openware.com/api/v2/tenko"
   key: "PASTE-KEY-HERE"
 images:
   peatio: rubykube/peatio:2.3.43
   barong: rubykube/barong:2.3.36
-  frontend: docker.pkg.github.com/mobidax/opendax/baseapp:2.3.27
+  frontend: gitlab.tunex.io:5050/arg/baseapp
   tower: quay.io/openware/tower:2.3.138
   postmaster: quay.io/openware/postmaster:2.3.4
 rabbitmq:
@@ -25,20 +25,20 @@ storage:
   accessKey: "**********"
   secretKey: "**********"
 twilio:
-  phone_number: "+15005550000"
-  account_sid: "changeme"
-  auth_token: "changeme"
+  phone_number: "+13236213650"
+  account_sid: "ACb7da3ff9d7af882a97d8b776118b4758"
+  auth_token: "68adb4338b69d1bcefde7a3f3a521c51"
 recaptcha:
   type: "none"
   siteKey: "changeme"
   secretKey: "changeme"
 smtp:
-  host: smtp.sendgrid.net
-  port: 2525
-  user: apikey
-  password: changeme
-  sender_email: noreply@postmaster.com
-  sender_name: Postmaster
+  host: smtp.hostinger.in
+  port: 587
+  user: support@dinrx.com
+  password: Little27.
+  sender_email: noreply@dinrx.com
+  sender_name: Support
 wallets:
   - kind: deposit
     address: "changeme"
